@@ -25,7 +25,7 @@ window.onload = function(){
         data.push(temp);
     }
 
-    console.log(data)
+    // console.log(data)
 
     var layout = {
         barmode: 'stack',
