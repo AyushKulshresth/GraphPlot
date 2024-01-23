@@ -12,27 +12,6 @@ def main_page(request):
     return render(request, 'main.html')
 
 def index(request):
-    # data = pd.read_csv('matches.csv')
-    # data_list = data["team1"].tolist()
-    # print(data["team1"].tolist())
-    # get_info()
-    # bar_graph = data.groupby("season")["id"].count().to_dict()
-    # # print(bar_graph)
-    # new_dict = {}
-    # for keys, values in bar_graph.items():
-    #     if "x" not in new_dict:
-    #         new_dict["x"] = [keys]
-    #     else:
-    #         new_dict["x"].append(keys)
-
-    #     if "y" not in new_dict:
-    #         new_dict["y"] = [values]
-    #     else:
-    #         new_dict["y"].append(values)
-
-    # print(new_dict)
-    # new_dict = json.dumps(new_dict)
-    # fig.savefig("static/plot.py")
     new_dict = services.seasons_vs_matches()
     new_dict = json.dumps(new_dict)
     return render(request, "index.html", {"bar_graph_data": new_dict, "title": "Number of matches per season"})
