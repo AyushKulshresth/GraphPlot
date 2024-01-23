@@ -4,21 +4,19 @@ function loadJson(selector) {
 
 window.onload = function(){
     var jsonData = loadJson("#my-data");
-
+    var t = document.getElementById("title").getAttribute("data")
     // console.log(jsonData);
 
     var data = [];
 
     for (let i = 0; i<jsonData.length; i++){
         jsonData[i]["type"] = "bar";
-        jsonData[i]["name"] = "All Matches";
         data.push(jsonData[i]);
     }
 
     // console.log(data);
 
     var layout = {
-        title: 'Number of Matches played per Season',
         font:{
           family: 'Raleway, sans-serif'
         },
