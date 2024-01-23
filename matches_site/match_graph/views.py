@@ -19,5 +19,6 @@ def index(request):
 def graph2(request):
     new_dict = services.winners_per_season()
     new_dict = json.dumps(new_dict)
+    # print(new_dict)
     return render(request, "graph2.html", {"bar_graph_data": new_dict})
 
